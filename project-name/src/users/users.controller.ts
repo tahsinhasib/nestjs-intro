@@ -1,4 +1,4 @@
-import { Body, Controller, Get, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { check } from './DTO/check.dto';
 
@@ -10,5 +10,10 @@ export class UsersController {
     //@UsePipes(ValidationPipe)
     allData(@Body() ab:check) {
         return "hey";
+    }
+
+    @Post('send')
+    sendData(@Body() ab) {
+        return ab;
     }
 }

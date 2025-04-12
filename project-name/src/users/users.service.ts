@@ -5,4 +5,8 @@ export class UsersService {
     allData() {
         return "first time data";
     }
+
+    sendData() {
+        return "sent data success";
+    }
 }
