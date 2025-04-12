@@ -25,6 +25,10 @@
         <td>Step - 5</td>
         <td>Install class validator using following command: <br><code>npm i --save class-validator class-transformer</code></td>
     </tr>
+    <tr>
+        <td>Step - 6</td>
+        <td>For database operation use following command: <br><code>npm install --save typeorm pg</code></td>
+    </tr>
 </table>
 
 
