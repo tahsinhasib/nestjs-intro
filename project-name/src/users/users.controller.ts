@@ -35,4 +35,11 @@ export class UsersController {
     deleteId(@Param('Id')id){
       return this.usersService.deleteId(id)
     }
+
+    // for searching data
+    @Get(':Id')
+     getId(@Param('Id')id)
+     {
+      return this.usersService.getId(id)
+     }
 }

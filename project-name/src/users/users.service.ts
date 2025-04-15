@@ -25,4 +25,10 @@ export class UsersService {
         this.myRepo.delete(id)
         return "Deleted";
     }
+
+    // for searching data
+    getId(id)
+    {
+        return this.myRepo.findOne({where:{Id:id}})
+    }
 }
