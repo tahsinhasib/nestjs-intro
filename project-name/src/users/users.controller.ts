@@ -6,14 +6,27 @@ import { check } from './DTO/check.dto';
 export class UsersController {
     constructor(private readonly usersService: UsersService) {}
 
-    @Get('display')
+    
     //@UsePipes(ValidationPipe)
-    allData(@Body() ab:check) {
-        return "hey";
+    // allData(@Body() ab:check) {
+    //     return "hey";
+    // }
+    // @Post('send')
+    // sendData(@Body() ab) {
+    //     return ab;
+    // }
+
+
+
+    @Get('/all')
+    allData() {
+        return this.usersService.allData();
     }
 
-    @Post('send')
-    sendData(@Body() ab) {
-        return ab;
+    @Post('/add')
+     //@UsePipes(ValidationPipe)
+     saveData(@Body() data)
+    {
+        return this.usersService.saveData(data)
     }
 }

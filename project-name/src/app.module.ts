@@ -12,7 +12,7 @@ import { Photo } from './users/photo.entity';
         port: 5432,
         username: 'postgres',
         password: 'root',
-        database: 'test',
+        database: 'nestjsintro',
         entities: [
         Photo
         ],
