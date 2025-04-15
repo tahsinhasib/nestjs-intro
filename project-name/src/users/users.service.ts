@@ -8,13 +8,21 @@ export class UsersService {
 
     constructor(@InjectRepository(Photo) private myRepo: Repository<Photo>){}
 
+    // for displaying data
     allData() {
         //return "first time data";
         return this.myRepo.find();
     }
 
+    // for sending data
     saveData(data) {
         //return "sent data success";
         this.myRepo.save(data)
+    }
+
+    // for deleting data
+    deleteId(id) {
+        this.myRepo.delete(id)
+        return "Deleted";
     }
 }

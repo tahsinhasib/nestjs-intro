@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { check } from './DTO/check.dto';
 
@@ -17,16 +17,22 @@ export class UsersController {
     // }
 
 
-
+    // for displaying data
     @Get('/all')
     allData() {
         return this.usersService.allData();
     }
 
+    // for sending data
     @Post('/add')
-     //@UsePipes(ValidationPipe)
-     saveData(@Body() data)
-    {
+    @UsePipes(ValidationPipe)
+    saveData(@Body() data) {
         return this.usersService.saveData(data)
+    }
+
+    // for deleting data
+    @Delete('deletebyId/:Id')
+    deleteId(@Param('Id')id){
+      return this.usersService.deleteId(id)
     }
 }
