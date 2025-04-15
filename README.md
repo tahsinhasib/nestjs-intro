@@ -29,6 +29,10 @@
         <td>Step - 6</td>
         <td>For database operation use following command: <br><code>npm install --save typeorm pg</code></td>
     </tr>
+    <tr>
+        <td>Step - 7</td>
+        <td>For database operation use following command: <br><code>npm install --save @nestjs/typeorm typeorm pg</code></td>
+    </tr>
 </table>
 
 
