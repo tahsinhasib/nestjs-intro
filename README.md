@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Step - 1</td>
-        <td>In the working directory terminal run the following command: <br> <code>npm i -g @nestjs/cli <br> nest new project-name</code></td>
+        <td>In the working directory terminal run the following command: <br> <code>npm i -g @nestjs/cli </code><br> <code>nest new project-name</code></td>
     </tr>
     <tr>
         <td>Step - 2</td>
