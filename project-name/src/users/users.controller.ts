@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { check } from './DTO/check.dto';
+import { CreateUserDto } from './DTO/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -16,30 +17,21 @@ export class UsersController {
     //     return ab;
     // }
 
-
-    // for displaying data
-    @Get('/all')
-    allData() {
-        return this.usersService.allData();
+    @UsePipes(new ValidationPipe())
+    @Post('add')
+    create(@Body() createUserDto: CreateUserDto) {
+        return this.usersService.create(createUserDto.Name);
     }
 
-    // for sending data
-    @Post('/add')
-    @UsePipes(ValidationPipe)
-    saveData(@Body() data) {
-        return this.usersService.saveData(data)
+    @UsePipes(new ValidationPipe())
+    @Get('all')
+    findAll() {
+        return this.usersService.findAll();
     }
 
-    // for deleting data
-    @Delete('deletebyId/:Id')
-    deleteId(@Param('Id')id){
-      return this.usersService.deleteId(id)
+    @UsePipes(new ValidationPipe())
+    @Get(':id')
+    findOne(@Param('id') id: number) {
+        return this.usersService.findOne(id);
     }
-
-    // for searching data
-    @Get(':Id')
-     getId(@Param('Id')id)
-     {
-      return this.usersService.getId(id)
-     }
 }
